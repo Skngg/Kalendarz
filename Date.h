@@ -38,6 +38,11 @@ public:
 	bool operator!=(const Date &dateSecond) const;
 
 	friend std::ostream & operator<<(std::ostream &out, const Date &date);
+	Date addToDays(const Date &dateSecond);
+
+	inline int getYear() const {return year;};
+	inline int getMonth() const {return month;};
+	inline int getDay() const {return day;};
 };
 
 #endif /* DATE_H_ */

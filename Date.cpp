@@ -8,9 +8,7 @@
 #include "Date.h"
 
 Date::Date(int inputYear, int inputMonth, int inputDay) :
-		day(inputDay), month(inputMonth), year(inputYear)
-{
-}
+		day(inputDay), month(inputMonth), year(inputYear) {}
 
 Date::Date(const Date &dateFirst)
 {
@@ -85,7 +83,7 @@ bool Date::operator!=(const Date &dateSecond) const
 	return !(*this == dateSecond) ? true : false;
 }
 
-std::ostream & operator<<(std::ostream &out, const Date &date)
+std::ostream &operator<<(std::ostream &out, const Date &date)
 {
 	if (date.year < 1970 || date.month < 1 || date.day < 1)
 		out << "Data spoza epoki!" << std::endl;
@@ -95,3 +93,10 @@ std::ostream & operator<<(std::ostream &out, const Date &date)
 
 	return out;
 }
+
+Date Date::addToDays(const Date &dateSecond)
+{
+	return dateSecond;
+}
+
+
