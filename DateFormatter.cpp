@@ -18,3 +18,4 @@ std::string GermanDateFormatter::format(const Date& dateToShow) const
 	return std::to_string( dateToShow.getDay() )+ "." + std::to_string( dateToShow.getMonth() ) + "." + std::to_string( dateToShow.getYear() );
 }
 
+

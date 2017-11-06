@@ -28,7 +28,7 @@ int Date::convertToDays(const Date &date)
 
 Date Date::convertToDate(const int days)
 {
-	int leftDays, resultMonth = 0, resultYear = 0;
+	int leftDays, resultMonth = 1, resultYear = 0;
 
 	resultYear = days / 365;
 
@@ -59,7 +59,8 @@ Date Date::operator-(int daysMod)
 
 Date &Date::operator-=(const int daysMod)
 {
-	return *(this - daysMod);
+	(*this)=(*this)-daysMod;
+	return *this;
 }
 
 Date Date::operator+(const int daysMod)
@@ -69,7 +70,8 @@ Date Date::operator+(const int daysMod)
 
 Date &Date::operator+=(const int daysMod)
 {
-	return *(this + daysMod);
+	(*this)=(*this)+daysMod;
+	return *this;
 }
 
 bool Date::operator==(const Date &dateSecond) const
@@ -94,9 +96,8 @@ std::ostream &operator<<(std::ostream &out, const Date &date)
 	return out;
 }
 
-Date Date::addToDays(const Date &dateSecond)
+Date operator+ (const int daysMod, Date &dateSecond)
 {
-	return dateSecond;
+	return dateSecond + daysMod;
 }
-
 

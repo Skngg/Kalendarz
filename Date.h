@@ -8,7 +8,7 @@
 #ifndef DATE_H_
 #define DATE_H_
 
-#include<iostream>
+#include <iostream>
 #include <array>
 
 class Date
@@ -38,7 +38,6 @@ public:
 	bool operator!=(const Date &dateSecond) const;
 
 	friend std::ostream & operator<<(std::ostream &out, const Date &date);
-	Date addToDays(const Date &dateSecond);
 
 	inline int getYear() const {return year;};
 	inline int getMonth() const {return month;};

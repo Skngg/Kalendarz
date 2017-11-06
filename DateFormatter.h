@@ -17,12 +17,15 @@ public:
 	DateFormatter();
 
 	virtual std::string format(const Date& dateToShow) const;
+
 };
 
 class ComputerDateFormatter : public DateFormatter
 {
 	std::string format(const Date& dateToShow) const;
 };
+
+
 
 class GermanDateFormatter : public DateFormatter
 {
