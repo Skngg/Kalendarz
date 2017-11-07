@@ -10,26 +10,27 @@
 
 #include"Date.h"
 #include<string>
+#include <iomanip>
 
 class DateFormatter
 {
 public:
-	DateFormatter();
-
-	virtual std::string format(const Date& dateToShow) const;
+	virtual void format(const Date& dateToShow) const;
 
 };
 
 class ComputerDateFormatter : public DateFormatter
 {
-	std::string format(const Date& dateToShow) const;
+public:
+	void format(const Date& dateToShow) const;
 };
 
 
 
 class GermanDateFormatter : public DateFormatter
 {
-	std::string format(const Date& dateToShow) const;
+public:
+	void format(const Date& dateToShow) const;
 };
 
 #endif /* DATEFORMATTER_H_ */

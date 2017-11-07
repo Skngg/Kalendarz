@@ -13,8 +13,8 @@ int main()
 
 	Date d2(1970,2,1), data(1970,2,20);
 
-	DateFormatter f;
-	GermanDateFormatter f1;
+
+	GermanDateFormatter f2;
 
 
 
@@ -31,6 +31,7 @@ int main()
 	data-=28;
 	std::cout << data << std::endl;
 
+	f2.format(data);
 
 	return 0;
 

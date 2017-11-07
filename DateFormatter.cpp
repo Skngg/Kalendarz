@@ -7,15 +7,27 @@
 
 #include "DateFormatter.h"
 
-
-std::string ComputerDateFormatter::format(const Date& dateToShow) const
+void ComputerDateFormatter::format(const Date& dateToShow) const
 {
-	return std::to_string( dateToShow.getYear() ) + "-" + std::to_string( dateToShow.getMonth() ) + "-" + std::to_string( dateToShow.getDay() );
+	std::cout << std::to_string(dateToShow.getYear()) + "-";
+
+	std::cout << std::setfill('0') << std::setw(2)
+			<< std::to_string(dateToShow.getMonth()) << "-";
+
+	std::cout << std::setfill('0') << std::setw(2)
+			<< std::to_string(dateToShow.getDay());
+
 }
 
-std::string GermanDateFormatter::format(const Date& dateToShow) const
+void GermanDateFormatter::format(const Date& dateToShow) const
 {
-	return std::to_string( dateToShow.getDay() )+ "." + std::to_string( dateToShow.getMonth() ) + "." + std::to_string( dateToShow.getYear() );
-}
+	std::cout << std::setfill('0') << std::setw(2)
+				<< std::to_string(dateToShow.getDay());
 
+	std::cout <<  "." << std::setfill('0') << std::setw(2)
+			<< std::to_string(dateToShow.getMonth());
+
+	std::cout << "." + std::to_string(dateToShow.getYear());
+
+}
 
